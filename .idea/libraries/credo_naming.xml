@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="credo_naming" type="mix">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/_build/test/lib/credo_naming/ebin" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/deps/credo_naming/lib" />
+    </SOURCES>
+  </library>
+</component>
