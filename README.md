@@ -1,3 +1,5 @@
+![Tests](https://github.com/moritzploss/func/workflows/Tests/badge.svg)
+
 # Func
 
 **TODO: Add description**
