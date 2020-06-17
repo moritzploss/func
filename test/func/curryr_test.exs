@@ -1,7 +1,7 @@
-defmodule Func.CurryTest do
+defmodule Func.CurryrTest do
   use ExUnit.Case
 
-  alias Func.Curry
+  alias Func.Curryr
 
   def join, do: ""
   def join(a), do: a
@@ -9,29 +9,29 @@ defmodule Func.CurryTest do
   def join(a, b, c), do: a <> join(b, c)
 
   test "return evaluated function for function with arity 0" do
-    result = Curry.curry(&join/0)
+    result = Curryr.curryr(&join/0)
     assert "" = result
   end
 
   test "curries function with 1 argument" do
-    curried = Curry.curry(&join/1)
+    curried = Curryr.curryr(&join/1)
 
     result = curried.("a")
     assert "a" = result
   end
 
   test "curries function with 2 arguments" do
-    curried = Curry.curry(&join/2)
+    curried = Curryr.curryr(&join/2)
 
     first = curried.("a")
     assert is_function(first)
 
     result = first.("b")
-    assert "ab" = result
+    assert "ba" = result
   end
 
   test "curries function with 3 arguments" do
-    curried = Curry.curry(&join/3)
+    curried = Curryr.curryr(&join/3)
 
     first = curried.("a")
     assert is_function(first)
@@ -40,6 +40,6 @@ defmodule Func.CurryTest do
     assert is_function(second)
 
     result = second.("c")
-    assert "abc" = result
+    assert "cba" = result
   end
 end
