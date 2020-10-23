@@ -8,9 +8,9 @@ defmodule Func.CurryrTest do
   def join(a, b), do: a <> join(b)
   def join(a, b, c), do: a <> join(b, c)
 
-  test "return evaluated function for function with arity 0" do
+  test "curries function with arity 0" do
     result = Curryr.curryr(&join/0)
-    assert "" = result
+    assert "" = result.()
   end
 
   test "curries function with 1 argument" do

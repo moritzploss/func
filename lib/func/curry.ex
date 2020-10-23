@@ -10,7 +10,10 @@ defmodule Func.Curry do
   end
 
   def curry(func) when is_function(func) do
-    curry(func, arity(func), [])
+    case arity(func) do
+      0 -> fn -> func.() end
+      n -> curry(func, n, [])
+    end
   end
 
 end
